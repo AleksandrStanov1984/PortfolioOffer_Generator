@@ -1,3 +1,13 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Puppeteer-Automation-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PDF-Generator-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Stable-success?style=for-the-badge" />
+</p>
+
+
+
 # 📄 PortfolioOffer Generator
 
 A multilingual PDF generator for creating professional website-offer documents (DE/EN/RU) using **HTML templates**, **JSON localization**, **Puppeteer**, and dynamic **QR-code** injection.
