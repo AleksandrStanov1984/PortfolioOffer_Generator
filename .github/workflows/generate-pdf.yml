@@ -1,0 +1,38 @@
+name: Generate PDF (DE/EN/RU)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Chromium for Puppeteer
+        run: npx puppeteer browsers install chrome
+
+      - name: Generate PDFs
+        run: |
+          node scripts/makepdf.js de
+          node scripts/makepdf.js en
+          node scripts/makepdf.js ru
+
+      - name: Upload PDFs as workflow artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: PortfolioOffer_PDFs
+          path: storage/pdf/*.pdf

@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <title>{{title}}</title>
 
+  <!-- Динамические стили (разные для RU / DE / EN) -->
   <style>
     {{cssBody}}
 
+    /* Poster container */
     .poster {
       width: 930px;
       margin: 25px auto;
@@ -17,6 +19,7 @@
       box-shadow: 0 0 16px rgba(0,0,0,.4);
     }
 
+    /* Wrapper block */
     .content-wrapper {
       border: 2px solid #c7a663;
       border-radius: 18px;
@@ -24,7 +27,12 @@
       margin-top: 22px;
     }
 
-    .header h1 { margin: 0; font-size: 36px; font-weight: 900; }
+    /* Header */
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 900;
+    }
 
     .grad {
       background: linear-gradient(90deg, #a56cf2, #55b0ff);
@@ -32,21 +40,57 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .header h2 { margin-top: 15px; font-size: 22px; }
+    .header h2 {
+      margin-top: 15px;
+      font-size: 22px;
+    }
 
-    .content { display: flex; gap: 10px; margin-top: 25px; }
+    /* Main content layout */
+    .content {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+    }
 
-    .left, .right { width: 50%; padding: 12px; }
+    .left,
+    .right {
+      width: 50%;
+      padding: 12px;
+    }
 
-    h3 { margin: 0 0 12px; font-size: 20px; }
-    h4 { font-size: 16px; margin: 14px 0 8px; }
-    ul { margin: 0 0 12px 18px; }
+    /* Typography */
+    h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
 
-    .discount { margin-top: 25px; font-size: 26px; color: #e9c478; }
+    h4 {
+      font-size: 16px;
+      margin: 14px 0 8px;
+    }
 
-    .qr-block { text-align: right; margin-top: 12px; }
+    ul {
+      margin: 0 0 12px 18px;
+    }
 
-    .qr-block img { width: 110px; border-radius: 8px; margin-bottom: 14px; }
+    /* Highlight price */
+    .discount {
+      margin-top: 25px;
+      font-size: 26px;
+      color: #e9c478;
+    }
+
+    /* QR section */
+    .qr-block {
+      text-align: right;
+      margin-top: 12px;
+    }
+
+    .qr-block img {
+      width: 110px;
+      border-radius: 8px;
+      margin-bottom: 14px;
+    }
   </style>
 </head>
 
@@ -54,6 +98,7 @@
 
 <div class="poster">
 
+  <!-- Header -->
   <div class="header">
     <h1><span class="grad">OLEKSANDR</span> STANOV</h1>
 
@@ -65,9 +110,11 @@
     </p>
   </div>
 
+  <!-- Main content -->
   <div class="content-wrapper">
     <div class="content">
 
+      <!-- LEFT COLUMN -->
       <div class="left">
 
         <h3>{{included}}</h3>
@@ -117,6 +164,7 @@
 
       </div>
 
+      <!-- RIGHT COLUMN -->
       <div class="right">
 
         <h4>{{city}}</h4>
@@ -137,7 +185,9 @@
           {{discountAfter}}
         </p>
 
-        <p style="margin-top:18px;">{{bestRegards}},<br><b>Oleksandr Stanov</b></p>
+        <p style="margin-top:18px;">
+          {{bestRegards}},<br><b>Oleksandr Stanov</b>
+        </p>
 
         <div class="qr-block">
           <p>{{whatsapp}}</p>
@@ -146,6 +196,7 @@
           <p>{{telegram}}</p>
           <img src="{{qr_telegram}}">
         </div>
+
       </div>
 
     </div>

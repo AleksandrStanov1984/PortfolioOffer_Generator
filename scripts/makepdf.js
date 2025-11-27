@@ -9,6 +9,7 @@ const lang = process.argv[2] || "de";
 const i18nPath = path.resolve(__dirname, "../resources/i18n", `${lang}.json`);
 const htmlTemplatePath = path.resolve(__dirname, "../index.html");
 const qrBasePath = path.resolve(__dirname, "../resources/qr_imgs");
+const cssPath = "file://" + path.resolve(__dirname, "../styles/index.css");
 
 const tempHtmlPath = path.resolve(__dirname, "../storage/temp_render.html");
 const outputPdfPath = path.resolve(
@@ -42,6 +43,9 @@ html = html
 
 // Подставляем CSS для языка
 html = html.replace("{{cssBody}}", dict.cssBody || "");
+
+// Добавляем абсолютный CSS
+html = html.replace("{{absoluteCss}}", `<link rel="stylesheet" href="${cssPath}">`);
 
 // Сохраняем итоговый HTML
 fs.writeFileSync(tempHtmlPath, html, "utf8");
