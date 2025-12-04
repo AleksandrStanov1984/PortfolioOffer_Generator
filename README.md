@@ -1,3 +1,13 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Puppeteer-Automation-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PDF-Generator-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Stable-success?style=for-the-badge" />
+</p>
+
+
+
 # 📄 PortfolioOffer Generator
 
 A multilingual PDF generator for creating professional website-offer documents (DE/EN/RU) using **HTML templates**, **JSON localization**, **Puppeteer**, and dynamic **QR-code** injection.
@@ -105,22 +115,7 @@ Example: resources/i18n/de.json
 ```json
 {
   "lang": "de",
-  "title": "Angebot – Website-Visitenkarte",
-
-  "specialPrice": "Sonderpreis",
-  "promoText": "Dieses Promo-Angebot wurde zur Erweiterung meines Portfolios erstellt.",
-  "marketPrice": "Der reale Marktwert einer solchen Website liegt bei",
-  "marketRange": "2000–3000 €",
-
-  "included": "Was im Angebot enthalten ist",
-  "design": "Design",
-  "design_1": "Modernes, individuelles Interface",
-  "design_2": "Responsives Layout (PC, Tablet, Smartphone)",
-  "design_3": "Visuell harmonische Struktur",
-  "design_4": "Moderne UI-Patterns und Typografie",
-  "design_5": "Verwendung der Markenfarben des Kunden",
-
-  "cssBody": "body { margin:0; padding:0; background:#0b111d; font-family:'DejaVu Sans',Arial,sans-serif; font-size:18px; line-height:1.49; }"
+  "title": "Angebot – Website-Visitenkarte"
 }
 ```
 Any key defined in JSON can be placed inside HTML:
@@ -132,32 +127,14 @@ Any key defined in JSON can be placed inside HTML:
 {{cssBody}}
 ```
 
-## 🧩 Template Rendering Logic
-```html
-<h2>{{specialPrice}}: 600 €</h2>
-
-<p>
-    {{promoText}}<br>
-    {{marketPrice}} <b>{{marketRange}}</b>.
-</p>
-
-<p>{{whatsapp}}</p>
-<img src="{{qr_whatsapp}}" />
-
-```
-
 ## 🖼 QR Code System
 ```bash
 resources/qr_imgs/
   ├─ qr_whatsapp_gold.png
   └─ qr_telegram_gold.png
 ```
-Available inside template as:
-```html
-{{qr_whatsapp}}
-{{qr_telegram}}
 
-```
+
 ## 🔧 Requirements
 
 - Node.js 18+
